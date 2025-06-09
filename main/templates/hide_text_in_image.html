@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Text in Image</title>
+    <style>
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        /* Heading */
+        h1 {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Label Styling */
+        label {
+            font-weight: bold;
+            font-size: 14px;
+            text-align: left;
+            display: block;
+            margin-bottom: 5px;
+            color: #34495e;
+        }
+
+        /* Input and Textarea Styling */
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        /* Focus Effect */
+        input:focus, textarea:focus {
+            border-color: #2980b9;
+            outline: none;
+        }
+
+        /* File Input */
+        input[type="file"] {
+            padding: 8px;
+            cursor: pointer;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+        }
+
+        /* Section Containers with Different Background Colors */
+        .form-section {
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .key-section {
+            background: #f1c40f;
+        }
+
+        .cover-section {
+            background: #e74c3c;
+        }
+
+        .text-section {
+            background: #3498db;
+        }
+
+        /* Button Styling */
+        button {
+            background: #16a085;
+            color: white;
+            font-size: 16px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #1abc9c;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            input, button, textarea {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-buttons" style="position: absolute; top: 10px; width: 90%; max-width: 450px; display: flex; justify-content: space-between;">
+        <a href="/" style="text-decoration: none; background-color: #ffeb3b; color: #333; padding: 8px 12px; border-radius: 5px; font-weight: bold; font-size: 16px; transition: 0.3s ease;">Home</a>
+        <a href="/generate_key" style="text-decoration: none; background-color: #ffeb3b; color: #333; padding: 8px 12px; border-radius: 5px; font-weight: bold; font-size: 16px; transition: 0.3s ease;">Generate Key</a>
+    </div>
+
+    <div class="container">
+        <h1>Hide Text in Image</h1>
+        <form action="/hide_text_in_image" method="post" enctype="multipart/form-data">
+            <div class="form-section key-section">
+                <label for="key">Enter Key:</label>
+                <input type="text" name="key" id="key" placeholder="Enter encryption key" required>
+            </div>
+
+            <div class="form-section cover-section">
+                <label for="cover_image">Upload Cover Image:</label>
+                <input type="file" name="cover_image" id="cover_image" required>
+            </div>
+
+            <div class="form-section text-section">
+                <label for="text">Text to Hide:</label>
+                <textarea name="text" id="text" rows="4" placeholder="Enter secret text" required></textarea>
+            </div>
+
+            <button type="submit">Hide Text</button>
+        </form>
+    </div>
+</body>
+</html>

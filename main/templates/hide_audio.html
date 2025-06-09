@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hide Audio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: #e8f5e9;
+      color: #2c3e50;
+      padding: 20px;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-buttons {
+      position: absolute;
+      top: 20px;
+      width: 90%;
+      max-width: 450px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      background-color: #c8e6c9;
+      color: #1b5e20;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.3s ease;
+    }
+
+    .nav-buttons a:hover {
+      background: #aed581;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+      border: 1px solid #81c784;
+    }
+
+    h1 {
+      font-size: 26px;
+      color: #388e3c;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 14px;
+      text-align: left;
+      display: block;
+      color: #2e7d32;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #66bb6a;
+      font-size: 14px;
+      background: #e8f5e9;
+      transition: all 0.3s ease-in-out;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #1b5e20;
+      box-shadow: 0px 0px 10px rgba(27, 94, 32, 0.3);
+    }
+
+    input[type="file"] {
+      padding: 8px;
+      background: #ffffff;
+      border: 1px solid #66bb6a;
+      cursor: pointer;
+    }
+
+    button {
+      background: #2e7d32;
+      color: white;
+      font-size: 16px;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #1b5e20;
+      transform: scale(1.05);
+    }
+
+    .success-message {
+      background: #c8e6c9;
+      color: #2e7d32;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      border: 1px solid #81c784;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 95%;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      input, button {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-buttons">
+    <a href="/">Home</a>
+    <a href="/generate_key">Generate Key</a>
+  </div>
+
+  <div class="container">
+    <h1>Hide an Audio File</h1>
+
+    <form action="/hide_audio" method="post" enctype="multipart/form-data">
+      <label for="secret_audio">Secret Audio:</label>
+      <input type="file" name="secret_audio" id="secret_audio" required>
+
+      <label for="cover_audio">Cover Audio:</label>
+      <input type="file" name="cover_audio" id="cover_audio" required>
+
+      <button type="submit">Hide Audio</button>
+    </form>
+
+    {% if success %}
+    <div class="success-message">
+      <h2>Success!</h2>
+      <p>Secret audio has been successfully hidden.</p>
+      <p><strong>Length of Secret Audio (Frames):</strong> {{ secret_audio_length }}</p>
+      <p><a href="{{ output_audio }}" download>Download Output Audio</a></p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>

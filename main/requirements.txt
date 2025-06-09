@@ -1,0 +1,4 @@
+Flask==2.2.2
+cryptography==39.0.1
+Pillow==9.2.0
+numpy==1.23.4

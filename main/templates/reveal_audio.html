@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reveal Audio</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            color: #333;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        /* Button Container */
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for Home and Generate Key Buttons */
+        a {
+            font-size: 18px;
+            color: #fff;
+            background-color: #ff4081;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: #d81b60;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        a:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Container */
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        /* Heading */
+        h1 {
+            font-size: 24px;
+            color: #ff4081;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 14px;
+            text-align: left;
+            margin-top: 10px;
+            color: #ff4081;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input:focus {
+            border-color: #ff4081;
+            outline: none;
+        }
+
+        /* File & Number Input */
+        input[type="file"], input[type="number"] {
+            padding: 8px;
+            cursor: pointer;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+        }
+
+        /* Submit Button */
+        button {
+            background: #ff4081;
+            color: white;
+            font-size: 16px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #d81b60;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            input, button, a {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <a href="/">Home</a>
+        <a href="/generate_key">Generate Key</a>
+    </div>
+    <div class="container">
+        <h1>Reveal an Audio File</h1>
+        <form action="/reveal_audio" method="post" enctype="multipart/form-data">
+            <label for="stego_audio">Upload Stego Audio:</label>
+            <input type="file" name="stego_audio" id="stego_audio" required>
+
+            <label for="secret_audio_length">Secret Audio Length (Frames):</label>
+            <input type="number" name="secret_audio_length" id="secret_audio_length" required>
+
+            <button type="submit">Reveal Audio</button>
+        </form>
+    </div>
+</body>
+</html>

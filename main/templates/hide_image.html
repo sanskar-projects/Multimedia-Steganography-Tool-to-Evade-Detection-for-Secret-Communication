@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hide Image</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffeb3b, #fbc02d);
+      color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .nav-buttons {
+      position: absolute;
+      top: 20px;
+      width: 90%;
+      max-width: 450px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      background-color: #fff59d;
+      color: #6d4c41;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.3s ease;
+    }
+
+    .nav-buttons a:hover {
+      background: #ffee58;
+    }
+
+    .container {
+      background: #fff8e1;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 450px;
+      border: 3px solid #fdd835;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #fbc02d;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 14px;
+      text-align: left;
+      display: block;
+      color: #795548;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #fdd835;
+      font-size: 14px;
+      transition: all 0.3s ease-in-out;
+      background: #fffde7;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #ffeb3b;
+      box-shadow: 0px 0px 10px rgba(255, 235, 59, 0.5);
+    }
+
+    input[type="file"] {
+      padding: 8px;
+      background: #fff59d;
+      border: 1px solid #fdd835;
+      cursor: pointer;
+    }
+
+    button {
+      background: #fbc02d;
+      color: #333;
+      font-size: 16px;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #ffeb3b;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 95%;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      input, button {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-buttons">
+    <a href="/">Home</a>
+    <a href="/generate_key">Generate Key</a>
+  </div>
+
+  <div class="container">
+    <h1>Hide an Image</h1>
+    <form action="/hide_image" method="post" enctype="multipart/form-data">
+      <label for="secret_image">Secret Image:</label>
+      <input type="file" name="secret_image" id="secret_image" required>
+
+      <label for="cover_image">Cover Image:</label>
+      <input type="file" name="cover_image" id="cover_image" required>
+
+      <button type="submit">Hide Image</button>
+    </form>
+  </div>
+</body>
+</html>

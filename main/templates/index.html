@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Steganography Tool to Evade Detection for Secret Communication Based on LSB Steganography and Fernet Encryption</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background: #ffffff; /* White Background */
+            color: #333;
+            text-align: center;
+            padding: 40px 20px;
+            opacity: 0;
+            animation: fadeInBody 1s forwards;
+        }
+
+        /* Fade-in Animation for Body */
+        @keyframes fadeInBody {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Page Title */
+        h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeInTitle 1s forwards;
+        }
+
+        /* Fade-in Animation for Title */
+        @keyframes fadeInTitle {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Outer Box (Container) */
+        .container {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: auto;
+            opacity: 0;
+            animation: fadeInContainer 1s forwards;
+        }
+
+        /* Fade-in Animation for Container */
+        @keyframes fadeInContainer {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Menu Container */
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            animation: slideInMenu 1s forwards;
+            opacity: 0;
+        }
+
+        /* Slide-in Animation for Menu */
+        @keyframes slideInMenu {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Menu Items with Different Background Colors */
+        .menu-item:nth-child(1) { background: #ff6b6b; } /* Red */
+        .menu-item:nth-child(2) { background: #4ecdc4; } /* Teal */
+        .menu-item:nth-child(3) { background: #ffcc00; } /* Yellow */
+        .menu-item:nth-child(4) { background: #ff85a2; } /* Pink */
+        .menu-item:nth-child(5) { background: #1e90ff; } /* Blue */
+        .menu-item:nth-child(6) { background: #9b59b6; } /* Purple */
+        .menu-item:nth-child(7) { background: #27ae60; } /* Green */
+        .menu-item:nth-child(8) { background: #f39c12; } /* Orange */
+        .menu-item:nth-child(9) { background: #d35400; } /* Dark Orange */
+        .menu-item:nth-child(10) { background: #34495e; } /* Dark Blue */
+        .menu-item:nth-child(11) { background: #8e44ad; } /* Deep Purple */
+
+        /* Menu Item Styling */
+        .menu-item {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 220px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInMenuItem 0.5s forwards;
+        }
+
+        /* Fade-in Animation for Each Menu Item */
+        @keyframes fadeInMenuItem {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .menu-item:nth-child(1) { animation-delay: 0s; }
+        .menu-item:nth-child(2) { animation-delay: 0.1s; }
+        .menu-item:nth-child(3) { animation-delay: 0.2s; }
+        .menu-item:nth-child(4) { animation-delay: 0.3s; }
+        .menu-item:nth-child(5) { animation-delay: 0.4s; }
+        .menu-item:nth-child(6) { animation-delay: 0.5s; }
+        .menu-item:nth-child(7) { animation-delay: 0.6s; }
+        .menu-item:nth-child(8) { animation-delay: 0.7s; }
+        .menu-item:nth-child(9) { animation-delay: 0.8s; }
+        .menu-item:nth-child(10) { animation-delay: 0.9s; }
+        .menu-item:nth-child(11) { animation-delay: 1s; }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Menu Links */
+        .menu-item a {
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            font-size: 16px;
+            display: block;
+            padding: 10px;
+        }
+
+        .menu-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .menu {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-item {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multimedia Steganography Tool to Evade Detection for Secret Communication Based on LSB Steganography and Fernet Encryption</h1>
+        <div class="menu">
+            <div class="menu-item"><a href="/hide_image">Hide Image</a></div>
+            <div class="menu-item"><a href="/reveal_image">Reveal Image</a></div>
+            <div class="menu-item"><a href="/hide_text_in_image">Hide Text in Image</a></div>
+            <div class="menu-item"><a href="/unhide_text_in_image">Unhide Text in Image</a></div>
+            <div class="menu-item"><a href="/hide_audio">Hide Audio</a></div>
+            <div class="menu-item"><a href="/reveal_audio">Reveal Audio</a></div>
+            <div class="menu-item"><a href="/hide_text_in_audio">Hide Text in Audio</a></div>
+            <div class="menu-item"><a href="/unhide_text_from_audio">Unhide Text in Audio</a></div>
+            <div class="menu-item"><a href="/encrypt_file">Encrypt Text File</a></div>
+            <div class="menu-item"><a href="/decrypt_file">Decrypt Text File</a></div>
+            <div class="menu-item"><a href="/generate_key">Generate Key</a></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unhide Text from Image</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Body */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            position: relative;
+        }
+
+        /* Top Navigation Links */
+        .top-nav {
+            position: absolute;
+            top: 20px;
+            width: 90%;
+            max-width: 400px;
+            display: flex;
+            justify-content: space-between;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .top-nav a:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Centered Container */
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        /* Heading */
+        h1 {
+            font-size: 22px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Labels */
+        label {
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+            text-align: left;
+        }
+
+        /* Inputs & File Upload */
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* File Input */
+        input[type="file"] {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        /* Submit Button */
+        button {
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="/">Home</a>
+        <a href="/generate_key">Generate Key</a>
+    </div>
+
+    <div class="container">
+        <h1>Unhide Text from Image</h1>
+        <form action="/unhide_text_in_image" method="post" enctype="multipart/form-data">
+            <label for="key">Enter Key:</label>
+            <input type="text" name="key" id="key" placeholder="Enter decryption key" required>
+
+            <label for="stego_image">Upload Stego Image:</label>
+            <input type="file" name="stego_image" id="stego_image" required>
+
+            <button type="submit">Unhide Text</button>
+        </form>
+    </div>
+</body>
+</html>
