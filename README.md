@@ -1,4 +1,5 @@
 # Multimedia Steganography Tool to Evade Detection for Secret Communication Based on LSB Steganography and Fernet Encryption
+<img src="VideoCapture.jpg">
 
 # Video Explanation
 <a href="https://drive.google.com/drive/u/0/folders/1QtuzUR96pagr_WHdgndaqPFWRLGFgBat?direction=a">project_p2_videos</a>
