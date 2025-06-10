@@ -9,5 +9,4 @@ The frontend of the application is built using HTML, CSS, and JavaScript, styled
 # Backend
 The backend is implemented in Python using the Flask microframework, which handles routing, data processing, and API endpoints. Core logic includes functions to perform LSB (Least Significant Bit) steganography for images and audio, text-based hiding using zero-width characters, and encryption using AES with user-defined keys. The Flask server manages file uploads, validates inputs, and triggers appropriate encoding or decoding workflows. Uploaded files are temporarily stored in a secure directory, and safeguards are in place to delete them after processing. For audio processing, libraries like pydub and wave are used, while PIL and numpy are used for image manipulation. Error handling and edge-case validation ensure system robustness.
 
-# video explanation
-<a href="https://drive.google.com/drive/u/0/folders/1QtuzUR96pagr_WHdgndaqPFWRLGFgBat?direction=a"></a>
+# <a href="https://drive.google.com/drive/u/0/folders/1QtuzUR96pagr_WHdgndaqPFWRLGFgBat?direction=a">Video Explanation</a>
