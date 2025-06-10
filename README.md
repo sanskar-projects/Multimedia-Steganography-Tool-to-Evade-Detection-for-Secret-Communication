@@ -1,5 +1,8 @@
 # Multimedia Steganography Tool to Evade Detection for Secret Communication Based on LSB Steganography and Fernet Encryption
 
+# Video Explanation
+<a href="https://drive.google.com/drive/u/0/folders/1QtuzUR96pagr_WHdgndaqPFWRLGFgBat?direction=a">project_p2_videos</a>
+
 # System Overview
 The system is a web-based application developed using the Flask framework that enables users to hide and retrieve messages within images, audio, or text files, along with encryption for enhanced security. The platform provides an end-to-end solution for secure data concealment using steganography, and the use of symmetric encryption (AES) or other cryptographic methods adds a strong layer of protection. Users can choose between different data types (text, image, or audio) and corresponding carrier media to embed or extract hidden content. The application integrates well-structured HTML templates, Flask routing, Python-based steganography libraries, and JavaScript for improved interactivity. It consists of three main modules: data input and media selection, steganographic embedding and extraction, and encryption/decryption.
 
@@ -8,5 +11,3 @@ The frontend of the application is built using HTML, CSS, and JavaScript, styled
 
 # Backend
 The backend is implemented in Python using the Flask microframework, which handles routing, data processing, and API endpoints. Core logic includes functions to perform LSB (Least Significant Bit) steganography for images and audio, text-based hiding using zero-width characters, and encryption using AES with user-defined keys. The Flask server manages file uploads, validates inputs, and triggers appropriate encoding or decoding workflows. Uploaded files are temporarily stored in a secure directory, and safeguards are in place to delete them after processing. For audio processing, libraries like pydub and wave are used, while PIL and numpy are used for image manipulation. Error handling and edge-case validation ensure system robustness.
-
-# <a href="https://drive.google.com/drive/u/0/folders/1QtuzUR96pagr_WHdgndaqPFWRLGFgBat?direction=a">Video Explanation</a>
